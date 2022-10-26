@@ -30,7 +30,7 @@ Route::get('r2', function() {
 
 Route::get('hello/{name}', function($name = 'Everybody') {    //修改參數成選擇性
     return 'Hello, '.$name;
-});
+})->name('hello.index');
 
 Route::get('kk', function() {   //test route:list
     return 'kk';
