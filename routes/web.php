@@ -17,3 +17,7 @@ Route::get('/', function() {    //回傳view
     return view('welcome');
 });
 
+Route::get('/', function() {    //回傳字串
+    return 'welcome';
+});
+
