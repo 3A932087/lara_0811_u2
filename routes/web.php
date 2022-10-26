@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,8 +40,10 @@ Route::get('kk', function() {   //test route:list
 Route::get('dashboard', function() {
     return 'dashboard';
 });
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('dashboard', function() {
+Route::group(['prefix' => 'admin'], function() {    //字首為admin之下的所有路徑
+    Route::get('dashboard', function() {        //路徑為/admin/dashboard
         return 'admin dashboard';
     });
 });
+
+Route::get('home', [HomeController::class, 'index'])->name('home.index');
