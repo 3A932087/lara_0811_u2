@@ -28,10 +28,19 @@ Route::get('r2', function() {
     return view('welcome');
 });
 
-Route::get('hello/{name}', function($name = 'Everybody') {    //修改參數成選擇性
+Route::get('hello/{name?}', function($name = 'Everybody') {    //修改參數成選擇性
     return 'Hello, '.$name;
 })->name('hello.index');
 
 Route::get('kk', function() {   //test route:list
     return 'kk';
+});
+
+Route::get('dashboard', function() {
+    return 'dashboard';
+});
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('dashboard', function() {
+        return 'admin dashboard';
+    });
 });
