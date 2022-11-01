@@ -47,3 +47,4 @@ Route::group(['prefix' => 'admin'], function() {    //字首為admin之下的所
 });
 
 Route::get('home', [HomeController::class, 'index'])->name('home.index');
+
